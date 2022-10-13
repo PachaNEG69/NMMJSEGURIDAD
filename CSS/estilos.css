@@ -1,0 +1,283 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #221022;
+}
+
+h1 {
+    display: none;
+}
+
+h2 {
+    text-align: center;
+    color: #eee;
+}
+
+/* ESTILOS DEL ID LISTA DE LOS ENLACES HACIA LOS PRODUCTOS */
+.lista {
+    cursor: pointer;
+}
+
+.lista.active {
+    background: blue;
+}
+/* ESTILOS DEL ID LISTA DE LOS ENLACES HACIA LOS PRODUCTOS */
+
+
+
+/* ESTILOS DEL CONTENEDOR FOOTER Y NAV */
+footer {
+    background: #ff4500;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+footer ul {
+    font-size: 20px;
+    color: #000;
+    display: flex;
+    gap: 30px;
+    margin-right: 10px;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+/* ESTILOS DEL CONTENEDOR FOOTER Y NAV */
+
+
+
+/* TODO ABAJO DE ESTA LINEA SON LOS ESTILOS ADAPTABLES PARA EL CONTENEDOR NAV */
+@media (max-width: 700px) {
+    footer h1 {
+        display: flex;
+        margin: auto;
+    }
+
+    h1 {
+        font-size: 40px;
+        text-transform: uppercase;
+        font-weight: bold;
+        background: linear-gradient(90deg, grey, #221022);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    #toggle {
+        position: absolute;
+        background: #0000ff;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        cursor: pointer;
+    }
+    
+    #toggle.active {
+        background: red;
+    }
+    
+    #toggle::before {
+        position: absolute;
+        content: "";
+        background: #fff;
+        width: 45px;
+        height: 2px;
+        box-shadow: 0 10px 0 #fff;
+        transition: 0.5s;
+    }
+    
+    #toggle.active::before {
+        transform: rotate(45deg);
+        box-shadow: 0 0px 0 #fff;
+    }
+    
+    #toggle::after {
+        position: absolute;
+        content: "";
+        background: #fff;
+        width: 45px;
+        height: 2px;
+        transform: translateY(-10px);
+        transition: 0.5s;
+    }
+    
+    #toggle.active::after {
+        transform: rotate(-45deg);
+    }
+    
+    .nav-menu {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: gray;
+        opacity: .9;
+        top: 30px;
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+        height: 100%;
+        transform: scale(0);
+        transition: 1s;
+        z-index: 99;
+    }
+    
+    .nav-menu {
+        display: flex;
+        list-style: none;
+    }
+    
+    .nav-menu_visible {
+        transform: scale(1);
+        transition: 1.5s;
+    }
+}
+/* TODO ARRIBA DE ESTA LINEA SON LOS ESTILOS ADAPTABLES PARA EL CONTENEDOR NAV */
+
+
+
+/* ABAJO DE ESTA LINEA ESTA EL CONTENEDOR QUE CONTIENE TODAS LAS IMAGENES */
+.producto {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-x: auto;
+    background: teal;
+  }
+  
+  .producto .itemBox {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      margin: 50px 40px;
+      transition: .5s;
+  }
+  
+  .producto .itemBox img {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      box-shadow: 5px 5px;
+  }
+  /* ARRIBA DE ESTA LINEA ESTA EL CONTENEDOR QUE CONTIENE TODAS LAS IMAGENES */
+  
+  
+  
+  /* TODO ABAJO DE ESTA LINEA ES EL TEXTO DE LAS IMAGENES DE CADA MARCA */
+  .label {
+      text-align: center;
+      letter-spacing: 2px;
+  }
+  
+  .contenedor-box {
+      position: relative;
+      width: 100%;
+      margin: 10px 20px;
+      top: -350px;
+      left: -20px;
+      box-shadow: 5px 0px;
+  }
+  
+  .contenedor-box .label {
+      position: relative;
+      padding: 10px;
+      background: midnightblue;
+      color: #fff;
+      cursor: pointer;
+  }
+  
+  .contenedor-box .contenido {
+      position: relative;
+      background: #221022;
+      height: 0;
+      overflow: hidden;
+      transition: 0.7s;
+      opacity: 0.8;
+  }
+  
+   .contenedor-box.active .contenido {
+      height: 280px;
+      padding: 10px;
+  }
+  
+  .label.active {
+      background: green;
+  }
+  
+  .contenedor-box .label::before {
+      content: "+";
+      position: absolute;
+      top: 45%;
+      right: 20px;
+      transform: translateY(-50%);
+      font-size: 2.5em;
+  }
+  
+  .contenedor-box.active .label::before {
+      content: "-";
+  }
+  
+  h5 {
+      text-align: center;
+      letter-spacing: 3px;
+      color: #eee;
+      text-transform: uppercase;
+      font-weight: 900;
+  }
+  /* TODO ARRIBA DE ESTA LINEA ES EL TEXTO DE LAS IMAGENES DE CADA MARCA */
+
+
+
+/* ESTILOS PARA EL WHATSAPP */
+.W a {
+    background: #fff;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    width: 50px;
+    height: 50px;
+}
+
+.W {
+    position: absolute;
+    z-index: 99;
+    bottom: -35px;
+    left: 46%;
+    font-size: 40px;
+    animation: animacion 2s infinite linear;
+}
+
+@keyframes animacion {
+    0% { transform: scale(0.8); }
+    25% { transform: scale(1.1); }
+    50% { transform: rotateY(360deg); }
+}
+
+.Whatsapp i {
+    color: green;
+}
+
+.Whatsapp:hover {
+    background: green;
+}
+
+.Whatsapp:hover i {
+    color: #fff;
+}
+/* ESTILOS PARA EL WHATSAPP */
