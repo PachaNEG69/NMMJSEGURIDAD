@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
+
+
+
+/* ESTILOS GENERALES */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* ESTILOS GENERALES */
+
+body {
+    position: relative;
+    background: #f4500f;
+    width: 100%;
+    height: 100%;
+}
+
+/* TODO ABAJO DE ESTA LINEA ES DEL CONTENEDOR PRE-CARGA */
+#contenedorCarga {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #221022;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+    z-index: 10;
+}
+
+h2 {
+    font-size: 10vw;
+    font-family: 'Nabla', cursive, sans-serif;
+    text-align: center;
+    margin-top: 200px;
+}
+
+#carga {
+    position: absolute;
+    border: 15px solid #ccc;
+    border-top-color: #f4266a;
+    border-top-style: groove;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    -webkit-animation: girar 1.5s linear infinite;
+    -o-animation: girar 1.5s linear infinite;
+    animation: girar 1.5s linear infinite;
+}
+
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+/* TODO ARRIBA DE ESTA LINEA ES DEL CONTENEDOR PRE-CARGA */
+
+
+/* TODO ABAJO DE ESTA LINEA SON LOS ESTILOS PARA EL MENU PRINCIPAL */
+main {
+    position: fixed;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: linear-gradient(rgb(0, 255, 255), #fff, rgb(0, 255, 255));
+    width: 100%;
+    height: 50px;
+    z-index: 1;
+    border-color: #000;
+}
+
+h1 {
+    font-family: 'Nabla', cursive, sans-serif;
+    font-size: 48px;
+    margin: 0 auto;
+}
+
+nav {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0000ff;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #000;
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+#toggle:before {
+    position: absolute;
+    content: "";
+    background: #fff;
+    box-shadow: 0 10px #fff;
+    width: 45px;
+    height: 2px;
+    transition: 0.8s;
+}
+
+#toggle:after {
+    position: absolute;
+    content: "";
+    background: #fff;
+    transform: translateY(-10px);
+    width: 45px;
+    height: 2px;
+    transition: 0.8s;
+}
+
+#toggle.active {
+    background: red;
+    border: 2px solid #fff;
+    transition: 0.8s;
+}
+
+#toggle.active:before {
+    background: #000;
+    box-shadow: 0 0px #000;
+    transform: rotate(45deg);
+    transition: 0.8s;
+}
+
+#toggle.active:after {
+    background: #000;
+    transform: rotate(-45deg);
+    transition: 0.8s;
+}
+
+.menu {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background: linear-gradient(90deg, #008080, #9acd32);
+    width: 100%;
+    height: 100%;
+    right: 0%;
+    top: 50px;
+    z-index: 1;
+}
+
+.lista {
+    position: relative;
+    display: flex;
+    color: #fff;
+    font-family: 'Bungee Inline', cursive, sans-serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.lista.active {
+    background: #0000ff;
+    border: 2px solid #ff0000;
+    border-radius: 10px;
+}
+/* TODO ARRIBA DE ESTA LINEA SON LOS ESTILOS PARA EL MENU PRINCIPAL */
+
+
+
+/* ESTILOS PARA EL MODO DIA Y NOCHE */
+.contenedor {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: #fff;
+    top: 8px;
+    left: 5px;
+    background: #0000ff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 1;
+    transition: 1s;
+}
+
+.contenedor.active {
+    background: #ff0000;
+    transform: rotate(315deg);
+    color: #000;
+    transition: 1s;
+}
+
+.dia {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: #ffff00;
+    top: 8px;
+    left: 100px;
+    background: #0000ff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 1;
+    transition: 1s;
+}
+
+.dia.active {
+    transform: rotate(360deg);
+    transition: 1s;
+}
+
+.noche {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: #000;
+    top: 8px;
+    left: 150px;
+    background: #0000ff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 1s;
+    z-index: 1;
+}
+
+.noche.active {
+    transform: rotate(360deg);
+    transition: 1s;
+}
+/* ESTILOS PARA EL MODO DIA Y NOCHE */
+
+
+
+/* ABAJO DE ESTA LINEA ESTA EL CONTENEDOR QUE CONTIENE TODAS LAS IMAGENES */
+.producto {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    margin: 20px 20px -30px;
+    margin-top: 70px;
+}
+/* ARRIBA DE ESTA LINEA ESTA EL CONTENEDOR QUE CONTIENE TODAS LAS IMAGENES */
+
+
+
+/* TODO ABAJO DE ESTA LINEA SON LOS ESTILOS PARA EL LIGHTBOX Y SU BOTOM */
+.ac8c, .ac1c, .ac2c, .ac3s, .ac3tn, .ac3wn, .ac6n, .ac6tc, .ac8cp, .abc1c, .ad4c, .ad8c, .ad1, .ad2, .ad3, .ad4, .ad5, .ad6, .ah4c, .ah8c, .at, .ah1, .ah2,
+.ah3, .ah4, .ah5, .ah6, .ah7, .ah8, .ax28, .adt, .apl, .ads, .ama, .ahv, .awd, .ast, .adp, .adh4, .adh8, .af1a, .af5a, .abv, .abc, .ace, .aci, .ak4, .asui,
+.ada, .ao4, .ao8, .asu360, .asci, .ak360, .akf {
+    cursor: pointer;
+}
+
+.lc8c, .lc1c, .lc2c, .lc3s, .lc3tn, .lc3wn, .lc6n, .lc6tc, .lc8cp, .lbc1c, .ld4c, .ld8c, .ld1, .ld2, .ld3, .ld4, .ld5, .ld6, .lh4c, .lh8c, .lt, .lh1, .lh2,
+.lh3, .lh4, .lh5, .lh6, .lh7, .lh8, .lx28, .ldt, .lpl, .lma, .lhv, .lwd, .lst, .ldp, .ldh4, .ldh8, .lf1a, .lf5a, .lbv, .lbc, .lce, .lds, .lci, .lk4, .lsui,
+.lda, .lo4, .lo8, .lsu360, .lsci, .lk360, .lkf {
+    position: fixed;
+    display: block;
+    background: teal;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    overflow-x: auto;
+}
+
+.lc8c h3, .lc1c h3, .lc2c h3, .lc3s h3, .lc3tn h3, .lc3wn h3, .lc6n h3, .lc6tc h3, .lc8cp h3, .lbc1c h3, .ld4c h3, .ld8c h3, .ld1 h3, .ld2 h3, .ld3 h3,
+.ld4 h3, .ld5 h3, .ld6 h3, .lh4c h3, .lh8c h3, .lt h3, .lh1 h3, .lh2 h3, .lh3 h3, .lh4 h3, .lh5 h3, .lh6 h3, .lh7 h3, .lh8 h3, .lx28 h3, .ldt h3, .lpl h3,
+.lds h3, .lma h3, .lhv h3, .lwd h3, .lst h3, .ldp h3, .ldh4 h3, .ldh8 h3, .lf1a h3, .lf5a h3, .lbv h3, .lbc h3, .lce h3, .lci h3, .lk4 h3, .lsui h3, .lda h3,
+.lo4 h3, .lo8 h3, .lsu360 h3, .lsci h3, .lk360 h3, .lkf h3 {
+    text-align: center;
+    font-family: 'Salsa', sans-serif;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 15px;
+    margin-top: 50px;
+    color: #000;
+    letter-spacing: 2px;
+}
+
+.lc8c #imagen, .lc1c #imagen, .lc2c #imagen, .lc3s #imagen, .lc3tn #imagen, .lc3wn #imagen, .lc6n #imagen, .lc6tc #imagen, .lc8cp #imagen, .lbc1c #imagen,
+.ld4c #imagen, .ld8c #imagen, .ld1 #imagen, .ld2 #imagen, .ld3 #imagen, .ld4 #imagen, .ld5 #imagen, .ld6 #imagen, .lh4c #imagen, .lh8c #imagen, .lt #imagen,
+.lh1 #imagen, .lh2 #imagen, .lh3 #imagen, .lh4 #imagen, .lh5 #imagen, .lh6 #imagen, .lh7 #imagen, .lh8 #imagen, .lx28 #imagen, .ldt #imagen, .lpl #imagen,
+.lds #imagen, .lma #imagen, .lhv #imagen, .lwd #imagen, .lst #imagen, .ldp #imagen, .ldh4 #imagen, .ldh8 #imagen, .lf1a #imagen, .lf5a #imagen, .lbv #imagen,
+.lbc #imagen, .lce #imagen, .lci #imagen, .lk4 #imagen, .lsui #imagen, .lda #imagen, .lo4 #imagen, .lo8 #imagen, .lsu360 #imagen, .lsci #imagen, .lk360 #imagen, 
+.lkf #imagen {
+    position: relative;
+    display: flex;
+    margin: 5px auto;
+}
+
+.cc8c, .cc1c, .cc2c, .cc3s, .cc3tn, .cc3wn, .cc6n, .cc6tc, .cc8cp, .cbc1c, .cd4c, .cd8c, .cd1, .cd2, .cd3, .cd4, .cd5, .cd6, .ch4c, .ch8c, .ct, .ch1, .ch2,
+.ch3, .ch4, .ch5, .ch6, .ch7, .ch8, .cx28, .cdt, .cpl, .cds, .cma, .chv, .cwd, .cst, .cdp, .cdh4, .cdh8, .cf1a, .cf5a, .cbv, .cbc, .cce, .cci, .ck4, .csui, .cda,
+.co4, .co8, .csu360, .csci, .ck360, .ckf {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    top: 0px;
+    right: 5px;
+    cursor: pointer;
+    color: #fff;
+    background: #221022;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+}
+/* TODO ARRIBA DE ESTA LINEA SON LOS ESTILOS PARA EL LIGHTBOX Y SU BOTOM */
